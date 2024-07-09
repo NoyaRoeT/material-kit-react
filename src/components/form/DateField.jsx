@@ -10,14 +10,16 @@ const DateField = ({
   format = 'DD/MM/YYYY',
   error,
   helperText,
+  fullWidth,
 }) => (
   <DatePicker
-    label="Date"
-    name="date"
+    id={id}
+    label={label}
+    name={name}
     onChange={onChange}
     onBlur={onBlur}
     value={value}
-    format="DD/MM/YYYY"
+    format={format}
     slotProps={{
       textField: {
         error,

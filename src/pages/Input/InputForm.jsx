@@ -31,7 +31,11 @@ export default function InputPage() {
     type: yup.number('Must be a number').required('This field is required'),
     date: yup
       .mixed()
-      .test('is-dayjs', 'Date is not valid', (value) => dayjs.isDayjs(value) && value.isValid()),
+      .test(
+        'is-dayjs',
+        'Date is not valid',
+        (value) => dayjs.isDayjs(value) && value.isValid() && false
+      ),
   });
 
   const handleSubmit = (values) => {
@@ -102,6 +106,8 @@ export default function InputPage() {
             onChange={(value) => formik.setFieldValue('date', value)}
             onBlur={formik.handleBlur}
             value={formik.values.date}
+            error={formik.touched.date && Boolean(formik.errors.date)}
+            helperText={formik.touched.date && formik.errors.date}
           />
         </Grid>
       </Grid>
