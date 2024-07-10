@@ -45,7 +45,7 @@ export default function ShowData() {
       setMasterList(res.data);
     });
 
-  const getChartData = () => {
+  const getChartData = async () => {
     const dateStrings = masterList.map((i) => dayjs(i.date).format('DD/MM/YYYY'));
     const uniqueDateStrings = new Set(dateStrings);
     const labels = Array.from(uniqueDateStrings).sort();
