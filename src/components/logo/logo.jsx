@@ -3,7 +3,6 @@ import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 import { Stack, Typography } from '@mui/material';
@@ -15,7 +14,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
     <Stack direction="row" sx={{ alignItems: 'center' }}>
       <Box
         component="img"
-        src="../../../public/favicon/favicon.ico"
+        src="/favicon/favicon.ico"
         sx={{ width: 40, height: 40, cursor: 'pointer', ...sx, mr: 1 }}
       />
       <Typography variant="h4">Some Portal</Typography>
