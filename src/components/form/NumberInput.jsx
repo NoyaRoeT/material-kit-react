@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { NumericFormat } from 'react-number-format';
 
-import { TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 
-const NumberField = ({
+const NumberInput = ({
   id,
   name,
   label,
@@ -19,6 +19,7 @@ const NumberField = ({
   helperText,
   fullWidth = true,
   sx,
+  prefix,
 }) => (
   <NumericFormat
     id={id}
@@ -37,12 +38,16 @@ const NumberField = ({
     fullWidth={fullWidth}
     customInput={TextField}
     InputLabelProps={{ shrink: true }}
-    InputProps={{ type: 'number' }}
-    sx={{ ...sx }}
+    InputProps={{
+      type: 'number',
+      startAdornment: <InputAdornment position="start">{prefix}</InputAdornment>,
+    }}
+    variant={disabled ? 'filled' : 'outlined'}
+    sx={sx}
   />
 );
 
-NumberField.propTypes = {
+NumberInput.propTypes = {
   id: PropTypes.any,
   name: PropTypes.string,
   label: PropTypes.string,
@@ -60,4 +65,4 @@ NumberField.propTypes = {
   sx: PropTypes.object,
 };
 
-export default NumberField;
+export default NumberInput;

@@ -1,6 +1,6 @@
 import { DatePicker } from '@mui/x-date-pickers';
 
-const DateField = ({
+const DateInput = ({
   id,
   label,
   name,
@@ -10,24 +10,28 @@ const DateField = ({
   format = 'DD/MM/YYYY',
   error,
   helperText,
-  fullWidth,
+  disabled = false,
+  fullWidth = false,
 }) => (
   <DatePicker
-    id={id}
     label={label}
     name={name}
     onChange={onChange}
     onBlur={onBlur}
     value={value}
     format={format}
+    disabled={disabled}
     slotProps={{
       textField: {
         error,
         helperText,
         InputLabelProps: { shrink: true },
+        variant: disabled ? 'filled' : 'outlined',
+        fullWidth,
+        id,
       },
     }}
   />
 );
 
-export default DateField;
+export default DateInput;

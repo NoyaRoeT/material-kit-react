@@ -97,7 +97,7 @@ export function overrides(theme) {
       styleOverrides: {
         root: {
           [`& .${outlinedInputClasses.notchedOutline}`]: {
-            borderColor: alpha(theme.palette.grey[500], 0.24),
+            borderColor: alpha(theme.palette.grey[500], 0.8),
           },
         },
       },

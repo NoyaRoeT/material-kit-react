@@ -11,22 +11,22 @@ const icon = (name) => (
 
 const sideBarItems = [
   {
-    title: 'Input',
-    path: '/',
+    title: 'Data Entry',
+    path: '/dataEntry',
     icon: icon('ic_analytics'),
   },
   {
-    title: 'Output',
-    path: '/output',
+    title: 'Show Data',
+    path: '/showData',
     icon: icon('ic_user'),
   },
 ];
 
-export const LoginPage = lazy(() => import('src/pages/Login'));
-export const Page404 = lazy(() => import('src/pages/NotFound'));
+export const Login = lazy(() => import('src/pages/Login'));
+export const NotFound = lazy(() => import('src/pages/NotFound'));
 
-export const InputPage = lazy(() => import('src/pages/Input/'));
-export const OutputPage = lazy(() => import('src/pages/Output/'));
+export const DataEntry = lazy(() => import('src/pages/dataEntry/DataEntry'));
+export const ShowData = lazy(() => import('src/pages/showData/ShowData'));
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ export default function Router() {
   const routes = useRoutes([
     {
       path: 'login',
-      element: <LoginPage />,
+      element: <Login />,
     },
     {
       element: (
@@ -45,9 +45,9 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <InputPage />, index: true },
-        { path: '/output', element: <OutputPage /> },
-        { path: '*', element: <Page404 /> },
+        { path: '/dataEntry', element: <DataEntry /> },
+        { path: '/showData', element: <ShowData /> },
+        { path: '*', element: <NotFound /> },
       ],
     },
   ]);

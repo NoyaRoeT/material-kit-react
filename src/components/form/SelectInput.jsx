@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { TextField, MenuItem } from '@mui/material';
 
-const SelectField = ({
+const SelectInput = ({
   id,
   name,
   label,
@@ -14,6 +14,7 @@ const SelectField = ({
   error = false,
   helperText,
   fullWidth = true,
+  disabled,
 }) => (
   <TextField
     select
@@ -28,6 +29,8 @@ const SelectField = ({
     helperText={helperText}
     fullWidth={fullWidth}
     InputLabelProps={{ shrink: true }}
+    disabled={disabled}
+    variant={disabled ? 'filled' : 'outlined'}
   >
     {options.map((option) => (
       <MenuItem key={option.value} value={option.value}>
@@ -37,7 +40,7 @@ const SelectField = ({
   </TextField>
 );
 
-SelectField.propTypes = {
+SelectInput.propTypes = {
   id: PropTypes.any,
   name: PropTypes.string,
   label: PropTypes.string,
@@ -56,4 +59,4 @@ SelectField.propTypes = {
   fullWidth: PropTypes.bool,
 };
 
-export default SelectField;
+export default SelectInput;

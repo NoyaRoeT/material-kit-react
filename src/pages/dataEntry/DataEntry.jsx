@@ -1,17 +1,15 @@
 import { Helmet } from 'react-helmet-async';
-
-import InputForm from './InputForm';
-
+import DataEntryForm from './DataEntryForm';
 // ----------------------------------------------------------------------
 
 export default function InputPage() {
   return (
     <>
       <Helmet>
-        <title> Input Page </title>
+        <title> Data Entry </title>
       </Helmet>
 
-      <InputForm />
+      <DataEntryForm />
     </>
   );
 }
