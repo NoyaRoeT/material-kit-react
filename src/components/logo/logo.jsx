@@ -11,14 +11,6 @@ import { Stack, Typography } from '@mui/material';
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
-  const theme = useTheme();
-
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-
-  const PRIMARY_MAIN = theme.palette.primary.main;
-
-  const PRIMARY_DARK = theme.palette.primary.dark;
-
   const logo = (
     <Stack direction="row" sx={{ alignItems: 'center' }}>
       <Box

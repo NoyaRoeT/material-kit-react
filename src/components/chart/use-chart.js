@@ -93,12 +93,9 @@ export default function useChart(options) {
 
     // Grid
     grid: {
-      strokeDashArray: 3,
-      borderColor: theme.palette.divider,
-      xaxis: {
-        lines: {
-          show: false,
-        },
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5,
       },
     },
 
@@ -106,11 +103,17 @@ export default function useChart(options) {
     xaxis: {
       axisBorder: { show: false },
       axisTicks: { show: false },
+      decimalsInFloat: 2,
+    },
+
+    // Yaxis
+    yaxis: {
+      decimalsInFloat: 2,
     },
 
     // Markers
     markers: {
-      size: 0,
+      size: 6,
       strokeColors: theme.palette.background.paper,
     },
 
@@ -145,7 +148,7 @@ export default function useChart(options) {
       // Bar
       bar: {
         borderRadius: smUp ? 3 : 1,
-        columnWidth: '28%',
+        columnWidth: '10%',
         borderRadiusApplication: 'end',
         borderRadiusWhenStacked: 'last',
       },

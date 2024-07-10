@@ -1,31 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Container, Card } from '@mui/material';
+import { Container } from '@mui/material';
 import dayjs from 'dayjs';
-import LineChart from '../../components/LineChart';
-import DataTable from '../../components/DataTable';
 import client from 'src/services/AxiosService';
+import MixedChart from '../../components/MixedChart';
+import DataTable from '../../components/DataTable';
 
 export default function ShowData() {
   const [masterList, setMasterList] = useState([]);
-  const [chartData, setChartData] = useState({});
+  const [chartData, setChartData] = useState([]);
 
   const columns = [
-    { field: 'name', headerName: 'Name', width: 90 },
+    { field: 'name', headerName: 'Name', width: 300 },
     {
       field: 'qty',
       headerName: 'Quantity',
-      width: 150,
+      width: 125,
     },
     {
-      field: 'price',
-      headerName: 'Price',
-      width: 150,
+      field: 'amt',
+      headerName: 'Amount',
+      width: 125,
+      renderCell: (params) => `$${params.value}`,
     },
     {
       field: 'date',
       headerName: 'Date',
-      width: 150,
+      width: 125,
       renderCell: (params) => {
         const date = params.value ? dayjs(params.value) : null;
         return date.format('DD/MM/YYYY');
@@ -53,14 +54,13 @@ export default function ShowData() {
 
     masterList.forEach((row) => {
       const dateString = dayjs(row.date).format('DD/MM/YYYY');
-      if (aggregate[dateString]) aggregate[dateString] += row.price;
-      else aggregate[dateString] = row.price;
+      if (aggregate[dateString]) aggregate[dateString] += row.amt;
+      else aggregate[dateString] = row.amt;
     });
 
     const data = [];
-    labels.forEach((l) => data.push(aggregate[l]));
-
-    setChartData({ labels, data });
+    labels.forEach((l) => data.push({ x: l, y: aggregate[l] }));
+    setChartData(data);
   };
 
   useEffect(() => {
@@ -74,24 +74,37 @@ export default function ShowData() {
   return (
     <>
       <Helmet>
-        <title> Output Page </title>
+        <title> Show Data </title>
       </Helmet>
 
-      <Container maxWidth="xl">
-        <LineChart
-          title="Test Header"
-          subheader="Test Subheader"
-          chart={{
-            labels: chartData.labels,
-            series: [
-              {
-                name: 'Price over time',
-                type: 'area',
-                fill: 'gradient',
-                data: chartData.data,
-              },
-            ],
-          }}
+      <Container maxWidth="md">
+        <MixedChart
+          title="Mixed Chart"
+          subtitle="Can mix line, column scatter and area plots"
+          series={[
+            {
+              name: 'Line',
+              type: 'line',
+              fill: 'solid',
+              data: chartData,
+            },
+            {
+              name: 'Scatter',
+              type: 'scatter',
+              data: chartData,
+            },
+            {
+              name: 'Column',
+              type: 'column',
+              data: chartData,
+            },
+            {
+              name: 'Area',
+              type: 'area',
+              fill: 'gradient',
+              data: chartData,
+            },
+          ]}
         />
 
         <DataTable sx={{ mt: 2 }} columns={columns} rows={masterList} />

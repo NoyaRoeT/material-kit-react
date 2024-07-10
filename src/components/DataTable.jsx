@@ -31,6 +31,9 @@ function DataTable({
         disableColumnMenu={disableColumnMenu}
         disableColumnSorting={disableColumnSorting}
         autoHeight
+        localeText={{
+          noRowsLabel: 'No data available...',
+        }}
       />
     </Card>
   );

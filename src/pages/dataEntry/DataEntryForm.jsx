@@ -14,9 +14,9 @@ import client from '../../services/AxiosService';
 
 export default function DataEntryForm() {
   const currencyOptions = [
-    { label: 'US Dollars', value: 1 },
-    { label: 'SG Dollars', value: 2 },
-    { label: 'NX Cash', value: 3 },
+    { label: 'Necessity', value: 'Necessity' },
+    { label: 'Luxury', value: 'Luxury' },
+    { label: 'Charity', value: 'Charity' },
   ];
 
   const initialValues = {
@@ -33,7 +33,7 @@ export default function DataEntryForm() {
       .number('Must be a number')
       .min(0, 'Must be non-negative')
       .required('This field is required'),
-    price: yup
+    amt: yup
       .number('Must be a number')
       .min(0, 'Must be non-negative')
       .required('This field is required'),
@@ -106,8 +106,8 @@ export default function DataEntryForm() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <NumberInput
-                name="price"
-                label="Price"
+                name="amt"
+                label="Amount"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.price}
