@@ -1,3 +1,4 @@
+import { Card } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
 function DataTable({
@@ -7,6 +8,7 @@ function DataTable({
   checkboxSelection = false,
   disableColumnMenu = false,
   disableColumnSorting = false,
+  sx,
 }) {
   const initialState = {};
 
@@ -19,16 +21,18 @@ function DataTable({
   }
 
   return (
-    <DataGrid
-      rows={rows}
-      columns={columns}
-      pageSizeOptions={pageSizeOptions}
-      checkboxSelection={checkboxSelection}
-      initialState={initialState}
-      disableColumnMenu={disableColumnMenu}
-      disableColumnSorting={disableColumnSorting}
-      autoHeight
-    />
+    <Card sx={sx}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSizeOptions={pageSizeOptions}
+        checkboxSelection={checkboxSelection}
+        initialState={initialState}
+        disableColumnMenu={disableColumnMenu}
+        disableColumnSorting={disableColumnSorting}
+        autoHeight
+      />
+    </Card>
   );
 }
 

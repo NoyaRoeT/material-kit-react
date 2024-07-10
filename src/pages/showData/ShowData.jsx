@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Container } from '@mui/material';
+import { Container, Card } from '@mui/material';
 import dayjs from 'dayjs';
 import LineChart from '../../components/LineChart';
 import DataTable from '../../components/DataTable';
@@ -94,7 +94,7 @@ export default function ShowData() {
           }}
         />
 
-        <DataTable columns={columns} rows={masterList} />
+        <DataTable sx={{ mt: 2 }} columns={columns} rows={masterList} />
       </Container>
     </>
   );
