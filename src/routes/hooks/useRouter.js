@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
-export function useRouter() {
+export default function useRouter() {
   const navigate = useNavigate();
 
   const router = useMemo(

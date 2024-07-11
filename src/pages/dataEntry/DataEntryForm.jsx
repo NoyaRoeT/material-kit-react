@@ -5,10 +5,10 @@ import { Grid, Button, Container, Typography, Card, CardContent } from '@mui/mat
 
 import dayjs from 'dayjs';
 
-import DateInput from 'src/components/form/DateInput';
-import TextInput from 'src/components/form/TextInput';
-import NumberInput from 'src/components/form/NumberInput';
-import SelectInput from 'src/components/form/SelectInput';
+import DateInput from '../../components/form/DateInput';
+import TextInput from '../../components/form/TextInput';
+import NumberInput from '../../components/form/NumberInput';
+import SelectInput from '../../components/form/SelectInput';
 
 import client from '../../services/AxiosService';
 

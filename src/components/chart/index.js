@@ -1,5 +1,2 @@
-// ----------------------------------------------------------------------
-
-export { default } from './chart';
-
-export { default as useChart } from './use-chart';
+export { default as StyledChart } from './StyledChart';
+export { default as useChartOptions } from './useChartOptions';

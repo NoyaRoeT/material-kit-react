@@ -3,11 +3,11 @@ import ApexChart from 'react-apexcharts';
 
 import { alpha, styled } from '@mui/material/styles';
 
-import { bgBlur } from 'src/theme/css';
+import { bgBlur } from '../../theme/css';
 
 // ----------------------------------------------------------------------
 
-const Chart = styled(ApexChart)(({ theme }) => ({
+const StyledChart = styled(ApexChart)(({ theme }) => ({
   '& .apexcharts-canvas': {
     // Tooltip
     '& .apexcharts-tooltip': {
@@ -64,4 +64,4 @@ const Chart = styled(ApexChart)(({ theme }) => ({
   },
 }));
 
-export default memo(Chart);
+export default memo(StyledChart);

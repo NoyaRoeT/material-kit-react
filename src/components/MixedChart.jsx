@@ -1,5 +1,5 @@
 import { Box, Card, CardHeader } from '@mui/material';
-import Chart, { useChart } from './chart';
+import { StyledChart, useChartOptions } from './chart';
 
 const MixedChart = ({ title, subtitle, series, options, ...other }) => {
   const combinedData = [];
@@ -9,7 +9,7 @@ const MixedChart = ({ title, subtitle, series, options, ...other }) => {
   });
   const maxY = Math.max(...combinedData);
 
-  const chartOptions = useChart({
+  const chartOptions = useChartOptions({
     fill: {
       type: series.map((i) => i.fill),
     },
@@ -31,7 +31,7 @@ const MixedChart = ({ title, subtitle, series, options, ...other }) => {
       <CardHeader title={title} subheader={subtitle} />
 
       <Box sx={{ p: 3, pb: 1 }}>
-        <Chart dir="ltr" series={series} options={chartOptions} width="100%" height={364} />
+        <StyledChart dir="ltr" series={series} options={chartOptions} width="100%" height={364} />
       </Box>
     </Card>
   );

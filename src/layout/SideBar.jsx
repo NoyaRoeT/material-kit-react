@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -7,16 +6,15 @@ import Drawer from '@mui/material/Drawer';
 import { alpha } from '@mui/material/styles';
 import ListItemButton from '@mui/material/ListItemButton';
 
-import { usePathname } from 'src/routes/hooks';
-import { RouterLink } from 'src/routes/components';
+import { usePathname } from '../routes/hooks';
+import RouterLink from '../routes/components/RouterLink';
 
-import { useResponsive } from 'src/hooks/use-responsive';
+import { useResponsive } from '../hooks/useResponsive';
 
-import Logo from 'src/components/logo';
-import Scrollbar from 'src/components/scrollbar';
+import Logo from '../components/Logo';
+import Scrollbar from '../components/scrollbar/Scrollbar';
 
 import { NAV } from './LayoutVariables';
-// ----------------------------------------------------------------------
 
 export default function SideBar({ openNav, onCloseNav, navItems }) {
   const pathname = usePathname();
@@ -27,7 +25,6 @@ export default function SideBar({ openNav, onCloseNav, navItems }) {
     if (openNav) {
       onCloseNav();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const renderMenu = (
@@ -92,12 +89,6 @@ export default function SideBar({ openNav, onCloseNav, navItems }) {
   );
 }
 
-SideBar.propTypes = {
-  openNav: PropTypes.bool,
-  onCloseNav: PropTypes.func,
-  navItems: PropTypes.arrayOf(PropTypes.object),
-};
-
 // ----------------------------------------------------------------------
 
 function NavItem({ item }) {
@@ -134,7 +125,3 @@ function NavItem({ item }) {
     </ListItemButton>
   );
 }
-
-NavItem.propTypes = {
-  item: PropTypes.object,
-};

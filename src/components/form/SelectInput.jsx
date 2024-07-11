@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { TextField, MenuItem } from '@mui/material';
 
 const SelectInput = ({
@@ -39,24 +37,5 @@ const SelectInput = ({
     ))}
   </TextField>
 );
-
-SelectInput.propTypes = {
-  id: PropTypes.any,
-  name: PropTypes.string,
-  label: PropTypes.string,
-  value: PropTypes.any,
-  placeholder: PropTypes.any,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.any,
-    })
-  ),
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  error: PropTypes.bool,
-  helperText: PropTypes.string,
-  fullWidth: PropTypes.bool,
-};
 
 export default SelectInput;

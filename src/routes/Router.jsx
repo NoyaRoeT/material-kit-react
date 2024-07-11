@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { Outlet, useRoutes } from 'react-router-dom';
 
-import DashboardLayout from 'src/layout/DashboardLayout';
+import DashboardLayout from '../layout/DashboardLayout';
 
-import SvgColor from 'src/components/svg-color/svg-color';
+import SvgColor from '../components/svgColor/SvgColor';
 
 const icon = (name) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
@@ -22,11 +22,11 @@ const sideBarItems = [
   },
 ];
 
-export const Login = lazy(() => import('src/pages/Login'));
-export const NotFound = lazy(() => import('src/pages/NotFound'));
+export const Login = lazy(() => import('../pages/Login'));
+export const NotFound = lazy(() => import('../pages/NotFound'));
 
-export const DataEntry = lazy(() => import('src/pages/dataEntry/DataEntry'));
-export const ShowData = lazy(() => import('src/pages/showData/ShowData'));
+export const DataEntry = lazy(() => import('../pages/dataEntry/DataEntry'));
+export const ShowData = lazy(() => import('../pages/showData/ShowData'));
 
 // ----------------------------------------------------------------------
 

@@ -11,14 +11,12 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { alpha, useTheme } from '@mui/material/styles';
 import InputAdornment from '@mui/material/InputAdornment';
 
-import { useRouter } from 'src/routes/hooks';
+import { useRouter } from '../routes/hooks';
 
-import { bgGradient } from 'src/theme/css';
+import { bgGradient } from '../theme/css';
 
-import Logo from 'src/components/logo';
-import Iconify from 'src/components/iconify';
-
-// ----------------------------------------------------------------------
+import Logo from '../components/Logo';
+import Iconify from '../components/iconify/Iconify';
 
 export default function Login() {
   const theme = useTheme();

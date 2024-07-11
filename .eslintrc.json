@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:react/jsx-runtime"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "endOfLine": "auto"
+      }
+    ],
+    "camelcase": "warn",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-quotes": [2, "prefer-double"],
+    "func-names": "off",
+    "no-console": "off",
+    "no-plusplus": "off",
+    "no-nested-ternary": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "react/function-component-definition": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-bind": "off",
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }]
+  }
+}

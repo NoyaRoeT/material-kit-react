@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { NumericFormat } from 'react-number-format';
 
 import { InputAdornment, TextField } from '@mui/material';
@@ -46,23 +45,5 @@ const NumberInput = ({
     sx={sx}
   />
 );
-
-NumberInput.propTypes = {
-  id: PropTypes.any,
-  name: PropTypes.string,
-  label: PropTypes.string,
-  value: PropTypes.number,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.number,
-  thousandSeparator: PropTypes.string,
-  allowNegative: PropTypes.bool,
-  decimalScale: PropTypes.number,
-  error: PropTypes.bool,
-  helperText: PropTypes.node,
-  fullWidth: PropTypes.bool,
-  sx: PropTypes.object,
-};
 
 export default NumberInput;

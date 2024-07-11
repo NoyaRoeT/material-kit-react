@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { alpha } from '@mui/material/styles';
@@ -15,6 +13,7 @@ export default function ColorPreview({ colors, limit = 3, sx }) {
     <Stack component="span" direction="row" alignItems="center" justifyContent="flex-end" sx={sx}>
       {renderColors.map((color, index) => (
         <Box
+          // eslint-disable-next-line react/no-array-index-key
           key={color + index}
           sx={{
             ml: -0.75,
@@ -34,9 +33,3 @@ export default function ColorPreview({ colors, limit = 3, sx }) {
     </Stack>
   );
 }
-
-ColorPreview.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.string),
-  limit: PropTypes.number,
-  sx: PropTypes.object,
-};

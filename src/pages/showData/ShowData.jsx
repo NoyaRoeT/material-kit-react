@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Container } from '@mui/material';
 import dayjs from 'dayjs';
-import client from 'src/services/AxiosService';
+import client from '../../services/AxiosService';
 import MixedChart from '../../components/MixedChart';
 import DataTable from '../../components/DataTable';
 

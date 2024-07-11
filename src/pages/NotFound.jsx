@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { RouterLink } from 'src/routes/components';
 import { Container, Box, Typography, Button } from '@mui/material';
+import RouterLink from '../routes/components/RouterLink';
 
 export default function NotFoundPage() {
   return (
@@ -32,17 +32,7 @@ export default function NotFoundPage() {
             sure to check your spelling.
           </Typography>
 
-          <Box
-            component="img"
-            src="/assets/illustrations/illustration_404.svg"
-            sx={{
-              mx: 'auto',
-              height: 260,
-              my: { xs: 5, sm: 10 },
-            }}
-          />
-
-          <Button href="/" size="large" variant="contained" component={RouterLink}>
+          <Button sx={{ mt: 2 }} href="/" size="large" variant="contained" component={RouterLink}>
             Go to Home
           </Button>
         </Box>
