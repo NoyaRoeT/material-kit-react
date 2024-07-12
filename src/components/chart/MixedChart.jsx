@@ -1,5 +1,5 @@
 import { Box, Card, CardHeader } from '@mui/material';
-import { StyledChart, useChartOptions } from './chart';
+import { StyledChart, useChartOptions } from './base';
 
 const MixedChart = ({ title, subtitle, series, options, ...other }) => {
   const combinedData = [];

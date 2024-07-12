@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { useResponsive } from '../../hooks/useResponsive';
+import { useResponsive } from '../../../hooks/useResponsive';
 
 // ----------------------------------------------------------------------
 

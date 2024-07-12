@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Container } from '@mui/material';
 import dayjs from 'dayjs';
 import Service from '../../services/AxiosService';
-import MixedChart from '../../components/MixedChart';
+import MixedChart from '../../components/chart/MixedChart';
 import DataTable from '../../components/DataTable';
 
 const columns = [

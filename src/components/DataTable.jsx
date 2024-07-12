@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Card } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
@@ -39,4 +40,4 @@ function DataTable({
   );
 }
 
-export default DataTable;
+export default memo(DataTable);
