@@ -8,4 +8,6 @@ const client = axios.create({
   timeout: 3600000, // 1 hour
 });
 
-export default client;
+const Service = { client };
+
+export default Service;

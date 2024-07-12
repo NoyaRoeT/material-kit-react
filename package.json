@@ -1,23 +1,12 @@
 {
-  "name": "@minimal/material-kit-react",
-  "author": "minimals.cc",
-  "licence": "MIT",
-  "version": "1.8.0",
-  "private": false,
+  "name": "biodiesel-portal",
+  "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
-    "start": "vite preview",
-    "build": "vite build",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "rm:all": "rm -rf node_modules .next out dist build",
-    "re:start": "yarn rm:all && yarn install && yarn dev",
-    "re:build": "yarn rm:all && yarn install && yarn build",
-    "re:build-npm": "npm run rm:all && npm install && npm run build",
-    "dev:host": "vite --host",
-    "vite:start": "vite",
-    "vite:build": "vite build"
+    "start": "cross-env VITE_ENVIRONMENT=debug vite",
+    "build": "cross-env VITE_ENVIRONMENT=prod_server vite build",
+    "build-test": "cross-env VITE_ENVIRONMENT=test_server vite build",
+    "build-prod": "cross-env VITE_ENVIRONMENT=prod_server vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -49,6 +38,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.4.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.51.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",

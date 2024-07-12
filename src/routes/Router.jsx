@@ -1,24 +1,24 @@
 import { lazy, Suspense } from 'react';
-import { Outlet, useRoutes } from 'react-router-dom';
+import { Outlet, useRoutes, Navigate } from 'react-router-dom';
 
 import DashboardLayout from '../layout/DashboardLayout';
 
 import SvgColor from '../components/svgColor/SvgColor';
 
 const icon = (name) => (
-  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+  <SvgColor src={`/assets/icons/sidebar/${name}.svg`} sx={{ width: 1, height: 1 }} />
 );
 
 const sideBarItems = [
   {
-    title: 'Data Entry',
-    path: '/dataEntry',
-    icon: icon('ic_analytics'),
+    title: 'Data Overview',
+    path: '/dataOverview',
+    icon: icon('data_overview'),
   },
   {
-    title: 'Show Data',
-    path: '/showData',
-    icon: icon('ic_user'),
+    title: 'Data Entry',
+    path: '/dataEntry',
+    icon: icon('data_entry'),
   },
 ];
 
@@ -26,7 +26,7 @@ export const Login = lazy(() => import('../pages/Login'));
 export const NotFound = lazy(() => import('../pages/NotFound'));
 
 export const DataEntry = lazy(() => import('../pages/dataEntry/DataEntry'));
-export const ShowData = lazy(() => import('../pages/showData/ShowData'));
+export const DataOverview = lazy(() => import('../pages/dataOverview/DataOverview'));
 
 // ----------------------------------------------------------------------
 
@@ -45,8 +45,9 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
+        { path: '/', element: <Navigate to="/dataOverview" /> },
         { path: '/dataEntry', element: <DataEntry /> },
-        { path: '/showData', element: <ShowData /> },
+        { path: '/dataOverview', element: <DataOverview /> },
         { path: '*', element: <NotFound /> },
       ],
     },

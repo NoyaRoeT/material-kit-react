@@ -14,7 +14,7 @@ const Logo = forwardRef(({ disabledLink = false, sx }) => {
         src="/favicon/favicon.ico"
         sx={{ width: 40, height: 40, cursor: 'pointer', ...sx, mr: 1 }}
       />
-      <Typography variant="h4">Some Portal</Typography>
+      <Typography variant="h4">Biodiesel Portal</Typography>
     </Stack>
   );
 
